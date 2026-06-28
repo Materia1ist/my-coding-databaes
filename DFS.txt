@@ -1,0 +1,122 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct edge
+{
+	int weight,v;
+};
+vector<edge>G[100];
+struct max_path
+{
+	int tot_weight;
+	int path[100];
+}MAX;
+
+//edge empty_point;
+//empty_point.v=0;empty_point.weight=0;
+//G[u].push_back(empty_point);
+void test_output_vis(int vis[],int len)//!!vis传入的是vis[0]的指针，要额外把len传进去 
+{
+	printf("test_output_vis::");
+	for(int i=1;i<len;i++)
+		printf("%2d",vis[i]);
+	printf("\n");
+}
+
+void add_undirector_edge(int u,int v,int w)
+{
+	edge l;
+	l.v=v;
+	l.weight=w;
+	G[u].push_back(l);
+	l.v=u;
+	l.weight=w;
+	G[v].push_back(l);
+}
+
+void add_director_edge(int u,int v,int w)
+{
+	edge l;
+	l.v=v;
+	l.weight=w;
+	G[u].push_back(l);
+}
+
+
+void DFS(int u,int sum_w,int distination,int vis[],int len,int step)
+{
+		vis[step]=u;
+	step++;
+	cout<<u<<endl;//cout<<sizeof(*vis);
+	if(u==distination)
+	{
+		if(MAX.tot_weight<sum_w)
+		{
+			MAX.tot_weight=sum_w;
+			for(int i=1;i<len;i++)
+			MAX.path[i]=vis[i];
+		}
+		return;
+	}
+	int vis_p[len];
+	//cout<<sizeof(*vis_p);//test
+
+	for(int i=1;i<len;i++)
+		vis_p[i]=vis[i];
+	
+	
+	test_output_vis(vis_p,len);
+	
+	for(vector<edge>::iterator it=G[u].begin();it!=G[u].end();it++)
+	{
+		edge tmp=*it;
+		if(vis[tmp.v])
+			continue;
+		DFS(tmp.v,sum_w+tmp.weight,distination,vis_p,len,step);
+		//cout<<""<<max_tot_weight<<endl;
+	}
+}
+
+
+/*int search_max_weight()
+{
+	int max,p;
+	for(vector<int>::iterator tot_weight.begin();it!=tot_weight.end();it++)
+	{
+		p=*it;
+		if(p>max)
+		{
+			max=p;
+		}
+	}
+	retunr max;
+}
+*/
+int main()
+{
+	int vis[100];
+	memset(vis,0000,sizeof(vis));
+	add_undirector_edge(1,3,4);
+	add_undirector_edge(3,4,5);
+	add_undirector_edge(1,4,6);
+	add_undirector_edge(4,2,2);
+	add_undirector_edge(1,2,7);
+	add_undirector_edge(4,5,3);
+	add_undirector_edge(5,6,7);
+	add_undirector_edge(6,7,5);
+	add_undirector_edge(8,7,8);
+	add_undirector_edge(7,9,9);
+	add_undirector_edge(8,9,10);
+	add_undirector_edge(8,10,1);
+	add_undirector_edge(9,10,20);
+	//add_undirector_edge(5,6,7);
+//	cout<<sizeof(vis);
+    int len=sizeof(vis)/sizeof(vis[0]);
+    //cout<<len;
+	test_output_vis(vis,len);
+	DFS(1,0,10,vis,len,1);
+	printf("\noo%doo\n",MAX.tot_weight);
+	for(int i=1;i<len;i++)
+		printf("%2d",MAX.path[i]);
+	return 0;
+}
