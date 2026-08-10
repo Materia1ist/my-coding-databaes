@@ -1,0 +1,24 @@
+﻿# Keil uVision generated files
+Listings/
+Objects/
+*.uvopt
+*.uvgui.*
+*.plg
+*.lnp
+*.M51
+*.LST
+*.OBJ
+*.Bak
+*.crf
+*.o
+*.d
+*.axf
+*.sct
+*.dep
+*.iex
+*.build_log.htm
+*.htm
+
+# Keil keygen (crack tool, do not upload)
+stm32/keil注册机/
+stm32/keil注册机.zip

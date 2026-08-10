@@ -1,0 +1,6 @@
+本apk是在Android Studio2.2.0版本编译完成。
+修改位置：
+
+图标修改：工程目录\bluetooth\app\src\main\res\mipmap-hdpi  mipmap-xxxhdpi 5个路径修改不同分辨率的图片可以在安卓后显示
+Apk名称修改：工程目录\bluetooth\app\src\main\res\values\string.xml 的appname修改成需要的名字
+APK界面文字修改：工程目录\bluetooth\app\src\main\res\layout 87行 android:text="张三的蓝牙控制"  文字修改成自己需要的
