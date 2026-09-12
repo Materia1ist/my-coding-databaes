@@ -3,8 +3,8 @@
         {
             "name": "Target 1",
             "includePath": [
-                "C:\\Users\\17699\\AppData\\Local\\Keil_v5\\C51\\INC",
-                "d:\\my-coding-databaes\\C51\\car\\MatrixKeypadTest"
+                "D:\\keil\\C51\\INC",
+                "d:\\my-coding-databaes-main\\C51\\car\\MatrixKeypadTest"
             ],
             "defines": [
                 "__C51__",

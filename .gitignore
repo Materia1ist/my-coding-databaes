@@ -22,3 +22,25 @@ Objects/
 # Keil keygen (crack tool, do not upload)
 stm32/keil注册机/
 stm32/keil注册机.zip
+
+# VS Code current-file C++ debug output
+__vscode_debug.exe
+
+# OS/editor temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Generic compiler/debug artifacts
+*.obj
+*.elf
+*.map
+*.ilk
+*.pdb

@@ -396,6 +396,16 @@
               <FileType>5</FileType>
               <FilePath>.\LCD1602.h</FilePath>
             </File>
+            <File>
+              <FileName>MatrixKeypad.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MatrixKeypad.c</FilePath>
+            </File>
+            <File>
+              <FileName>MatrixKeypad.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MatrixKeypad.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

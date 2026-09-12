@@ -1,14 +1,13 @@
-﻿{
-    "version": "0.2.0",
+{
     "configurations": [
         {
-            "name": "C/C++: debug active file",
+            "name": "C/C++: g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "environment": [
                 {
                     "name": "PATH",
@@ -23,9 +22,15 @@
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: build active file"
+            "preLaunchTask": "C/C++: g++.exe build active file"
         }
-    ]
+    ],
+    "version": "0.2.0"
 }

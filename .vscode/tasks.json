@@ -1,17 +1,16 @@
-﻿{
-    "version": "2.0.0",
+{
     "tasks": [
         {
-            "label": "C/C++: build active file",
-            "type": "process",
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
-                "-g",
                 "-std=c++17",
-                "${file}",
+                "-g",
+                "${fileBasename}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}",
@@ -22,39 +21,12 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "clear": true
-            }
-        },
-        {
-            "label": "C/C++: build and run active file",
-            "type": "process",
-            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": [],
-            "options": {
-                "cwd": "${fileDirname}",
-                "env": {
-                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
-                }
-            },
-            "dependsOn": "C/C++: build active file",
-            "dependsOrder": "sequence",
-            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-                "clear": false
-            }
+            "detail": "Microsoft C/C++ 官方 MinGW 模板；使用相对文件名兼容中文目录。"
         }
-    ]
+    ],
+    "version": "2.0.0"
 }
