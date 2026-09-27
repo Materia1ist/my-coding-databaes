@@ -6,6 +6,11 @@ const int MAXN = 1e5 + 5;
 struct edge
 {
     int v, w;
+    bool operator<(const edge& other)const
+    {
+        if(v != other.v)return v < other.v;
+        return w < other.w;
+    }
 };
 vector<edge> e[MAXN];
 int dis[MAXN], cnt[MAXN], vis[MAXN];
