@@ -1,3 +1,4 @@
+//abcd take tot 1h20min
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -50,7 +51,7 @@ signed main()
         while (L < R)
         {
             mid = (L+R+1)/2;
-            if(check(mid))L = mid;
+            if(check(mid)) L = mid;
             else R = mid-1;
         }
         cout << L << endl;
